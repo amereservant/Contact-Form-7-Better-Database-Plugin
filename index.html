@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Contact Form 7 Better Database Plugin : A WordPress plugin that adds support for storing Contact Form 7 form submissions in the database and making them accessible via the administrative panel." />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Contact Form 7 Better Database Plugin</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/amereservant/Contact-Form-7-Better-Database-Plugin">View on GitHub</a>
+
+          <h1 id="project_title">Contact Form 7 Better Database Plugin</h1>
+          <h2 id="project_tagline">A WordPress plugin that adds support for storing Contact Form 7 form submissions in the database and making them accessible via the administrative panel.</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/amereservant/Contact-Form-7-Better-Database-Plugin/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/amereservant/Contact-Form-7-Better-Database-Plugin/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p>h2. WordPress - Contact Form 7 Better Database Plugin</p>
+
+<p>p. The Contact Form 7 Better Database Plugin is a lightweight plugin that adds database support to CF7 so submitted form data will be stored in the database and accessible via the Administrator panel of WordPress. 
+One of the main goals is to keep the code minimal and utilise built-in WordPress functions/hooks/filters to make it well integrated and add minimal changes to WordPress including using existing WordPress database tables for storing the data.</p>
+
+<p>h3. Isn't there already a plugin that does this?</p>
+
+<p>p. Sorta.  There's the "Contact Form 7 to Database Extension(Contact Form 7 to Database Extension)":<a href="http://wordpress.org/extend/plugins/contact-form-7-to-database-extension/">http://wordpress.org/extend/plugins/contact-form-7-to-database-extension/</a> plugin that offers lots of features and even supports the "Fast Secure Contact Form(Fast Secure Contact Form)":<a href="http://wordpress.org/extend/plugins/si-contact-form/">http://wordpress.org/extend/plugins/si-contact-form/</a> plugin all within the same plugin.
+But after I ran into issues with it crashing my site to only discover it was because the plugin was storing uploaded files in binary form in the database instead of copying the files and referencing them via a link, I had to find something different.
+When looking into solving this issue with that plugin, I found it had over 50 files to go through and decided not to spend any more time going through them to correct the issue.  After all, we're only talking about grabbing the submitted form data and storing it while allowing it to be viewed/moderated from the admin panel ... surely we can do this in less than 50+ files.</p>
+
+<p>Thus ... this project was born.</p>
+
+<p>h3. Project Goals</p>
+
+<ul>
+<li><p>Use WordPress' built-in features.
+** Use custom post type for form data.
+** Use post_meta for storing the flexible fields data, this way when the post is retrieved/deleted, WordPress does all of the querying to combine the data and saves us a lot of unnecessary query syntax/functions.
+** Use Media Library for attachments - WordPress already uses this for post attachments and since file uploads are form attachments, let's use it too!  I'd like to separate them if possible from the regular attachments as long as it's not overly complicated.</p></li>
+<li><p>Minimal plugin size - It's not a complicated plugin since CF7 is already doing the majority of the work, so the number of files/lines of code shouldn't be excessive.</p></li>
+<li><p>WordPress best practices - I continue to strive to learn and use the correct ways/techniques of integrating plugins with WordPress and this one is no exception.  Development should be done with <em>WP_DEBUG</em> set to <em>true</em> and all NOTICE level errors should be fixed.  This is a huge pet-peeve of mine with many themes and plugins.</p></li>
+<li><p>Documented code - Code should be documented so the next guy doesn't have to learn some sort of Da Vinci Code just to figure out what the heck is going on in the plugin.  My desire is always for future development and improvements and that shouldn't be made any more difficult for someone than it has to be.</p></li>
+</ul>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Contact Form 7 Better Database Plugin maintained by <a href="https://github.com/amereservant">amereservant</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
